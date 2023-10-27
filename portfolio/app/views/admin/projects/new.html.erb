@@ -1,0 +1,52 @@
+<%= render "layouts/header", home: @home %>
+<%= form_with(model: @project, url: admin_projects_path, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <%= f.fields_for :project_technologies do |pt| %>
+    
+  <div class="field">
+    <%= pt.label :tecnologies_id, 'Tecnologías' %>
+    <%= pt.collection_select :tecnologies_id, @tecnologies, :id, :name, multiple: true,  :prompt => 'Choose a technology' %>
+    <%= pt.collection_select :tecnologies_id, @tecnologies, :id, :name, multiple: true,  :prompt => 'Choose a technology' %>
+    <%= pt.collection_select :tecnologies_id, @tecnologies, :id, :name, multiple: true,  :prompt => 'Choose a technology' %>
+    <br>
+    <%= pt.collection_select :tecnologies_id, @tecnologies, :id, :name, multiple: true,  :prompt => 'Choose a technology' %>
+    <%= pt.collection_select :tecnologies_id, @tecnologies, :id, :name, multiple: true,  :prompt => 'Choose a technology' %>
+  </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :responsabilities %>
+    <%= f.text_area :responsabilities %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :finish_date %>
+    <%= f.date_field :finish_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :project_technologies %>
+  </div>
+<% end %>
+
+<%= render "layouts/footer", home: @home %>

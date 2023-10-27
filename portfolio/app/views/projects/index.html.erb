@@ -1,0 +1,11 @@
+<%= render "layouts/header", home: @home %>
+<ul class="list_name">
+    <% Project.all.each do |projects| %>
+         
+        <li>
+           <h1> <%= link_to projects.name, project_path(projects), method: :get %></h1>
+        <li>
+        
+    <% end %>
+<ul>
+<%= render "layouts/footer", home: @home %>

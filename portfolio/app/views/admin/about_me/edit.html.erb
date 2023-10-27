@@ -1,0 +1,13 @@
+<%= render "layouts/header", home: @home %>
+<h1>Edit About Me</h1>
+<%= form_with(model: @user, url: admin_about_me_path(@user), local: true, method: :patch) do |form| %>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
+<%= link_to 'Volver', admin_about_me_path %>
+<%= render "layouts/footer", home: @home %>

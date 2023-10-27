@@ -1,0 +1,7 @@
+<%= render "layouts/header", home: @home %>
+<h1>About Me</h1>
+<p><strong>Nombre:</strong> <%= @user.name %></p>
+<p><strong>Descripción:</strong> <%= @user.description %></p>
+
+<%= link_to "Edit", edit_admin_about_me_path(@user) %>
+<%= render "layouts/footer", home: @home %>

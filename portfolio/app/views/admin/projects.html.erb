@@ -1,0 +1,14 @@
+<%= render "layouts/header", home: @home %>
+<ul class="list_name">
+    <% Project.all.each do |projects| %>
+         
+        <li>
+           <h1> <%= projects.name %></h1>
+        <li>
+        
+    <% end %>
+<ul>
+
+<%= link_to "New project", new_admin_project_path %>
+
+<%= render "layouts/footer", home: @home %>

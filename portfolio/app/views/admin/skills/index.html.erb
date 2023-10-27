@@ -1,0 +1,19 @@
+<%= render "layouts/header", home: @home %>
+
+<% Skill.all.each do |skill| %>
+ <h3><%= skill.Description   %></h3>
+
+ 
+ <!-- Add a link to the edit action -->
+ <%= link_to 'Edit', edit_admin_skill_path(skill), class: 'btn btn-primary' %>
+ 
+ <!-- Add a link to the delete action -->
+ <%= link_to 'Delete', admin_skill_path(skill), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+ 
+<hr>
+<% end %>
+
+
+<%= link_to "Nuevo", new_admin_skill_path %>
+
+<%= render "layouts/footer", home: @home %>

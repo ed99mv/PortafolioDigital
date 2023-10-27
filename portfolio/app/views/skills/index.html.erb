@@ -1,0 +1,5 @@
+<%= render "layouts/header", home: @home %>
+<% Skill.all.each do |skill| %>
+ <h3><%= skill.Description   %></h3>
+<% end %>
+<%= render "layouts/footer", home: @home %>

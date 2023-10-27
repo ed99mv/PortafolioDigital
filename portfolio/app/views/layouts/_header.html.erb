@@ -1,0 +1,33 @@
+<header id="main-header">
+		
+		<a id="logo-header" href="#">
+			<span class="site-name" >Portfolio Edward</span>
+			<span class="site-desc">Develoment / Software / sisoi</span>
+		</a> 
+
+		<nav>
+			<ul>
+				<li><%= link_to "Home", "/" %></li>
+				<% if current_user.has_role? (:admin) %>
+				  <li><%= link_to "User", "user" %></li>
+				<% end %>
+				<% if current_user.has_role? (:admin) %>
+				   <li><%= link_to "About", "/admin/about_me" %></li>
+				<% else %>
+				  <li><%= link_to "About", "/about" %></li>
+				<% end %>
+				<% if current_user.has_role? (:admin) %>
+				  <li><%= link_to "Projects", "/admin/projects" %></li>
+				<% else %>
+				  <li><%= link_to "Projects", "/projects" %></li>
+				<% end %>
+				<% if current_user.has_role? (:admin) %>
+				  <li><%= link_to "Skills", "/admin/skills" %></li>
+				<% else %>
+				  <li><%= link_to "Skills", "/skills" %></li>
+				<% end %>
+				
+			</ul>
+		</nav>
+
+</header>

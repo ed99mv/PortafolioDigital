@@ -1,0 +1,16 @@
+<%= render "layouts/header", home: @home %>
+<strong>Name:</strong> <%= @project.name %><br>
+<strong>Description:</strong> <%= @project.description %><br>
+<strong>Responsabilities:</strong> <%= @project.responsabilities %><br>
+<strong>Start Date:</strong> <%= @project.start_date %><br>
+<strong>Finish Date:</strong> <%= @project.finish_date %>
+<br>
+<%= link_to "Edit", edit_admin_project_path(@project) %>
+<li>
+  <%= link_to "Destroy", admin_project_path(@project), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
+</li>
+<%= link_to 'Volver', admin_projects_path %>
+<%= render "layouts/footer", home: @home %>

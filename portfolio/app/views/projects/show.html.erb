@@ -1,0 +1,9 @@
+<%= render "layouts/header", home: @home %>
+      <strong>Name:</strong> <%= @project.name %><br>
+      <strong>Description:</strong> <%= @project.description %><br>
+      <strong>Responsibilities:</strong> <%= @project.responsabilities %><br>
+      <strong>Start Date:</strong> <%= @project.start_date %><br>
+      <strong>Finish Date:</strong> <%= @project.finish_date %>
+    
+    <%= link_to 'Volver', projects_path %>
+<%= render "layouts/footer", home: @home %>

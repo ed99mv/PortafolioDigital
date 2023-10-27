@@ -1,0 +1,24 @@
+<%= render "layouts/header", home: @home %>
+
+<h2>Create new skill:</h2>
+
+<%= form_for @skill, url: admin_skills_path do |f| %>
+<br>
+    <div class="field">
+        <%= f.label :Description %>
+<br>
+        <%= f.text_area :Description %>
+    </div>
+    <div class="field">
+    <br>
+        <%= f.label :Skill_type_id %>
+<br>
+        <%= f.collection_select :Skill_type_id, SkillType.all, :id, :Description, prompt: "Tipo de habilidad" %>
+    </div>
+<br>
+    <!-- Otros campos del formulario -->
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
+<%= render "layouts/footer", home: @home %>
